@@ -15,13 +15,31 @@
     const sayilar = new Set();
 
 
+
     sayilar.add(1);
     sayilar.add('a');
+    sayilar.add(1);
+    //aynı elemandan eklemeye çalışırsak tekrardan eklemez
 
 
     //diziye cevirmek istersek
 
     const dizi = [...sayilar]; //value olarak atama referans değil
+
+    sayilar.delete(1);//value değerine göre sileriz
+    sayilar.clear();
+
+    let degerVarmi = sayilar.has(1); // boolean döndürür
+
+
+    console.log(sayilar.values());//iterator geriye döndürür.
+    // Böylece for düngüsü ile elemanlarının üzerinde dolaşabiliriz
+
+    for(let x of sayilar.values()){
+        console.log(x);
+    }
+
+    console.log(degerVarmi);
 
     console.log(sayilar);
 
