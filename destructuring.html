@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    let urun =  {
+        marka: 'af',
+        model: 'fsdg'
+    }
+
+    function urunGoster(obj){
+        let {marka,model,fiyat =0,satisDurumu = false} = obj;
+        console.log(marka,model,fiyat,satisDurumu);
+    }
+
+    urunGoster(urun);
+
+
+
+</script>
+
+</body>
+</html>

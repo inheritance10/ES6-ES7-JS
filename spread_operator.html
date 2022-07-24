@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+    //spread oparetor ...
+
+    const dizi1 = ['a','b','c'];
+    const dizi2 = [1,2,3];
+
+    const dizi3 = [...dizi1,...dizi2,'sgf','gfs'];
+    console.log(dizi3);
+
+
+    const sayilar1 = [1,2,3];
+
+    //const sayilar2 = sayilar1; //burada referance copy yaptık.
+
+    const sayilar2 = [...sayilar1]; //burada value copy yaptık
+
+    sayilar2[0] = 10;
+
+    //referance kopyalarsak sayilar2 deki değişiklil sayilar1 i etkiler
+
+    console.log(sayilar1,sayilar2);
+
+
+   /* const user = {
+        username : 'ali',
+        email : 'gfasg@gmail.com'
+    }
+
+    const address = {
+        username : 'ad',
+        city : 'gsag'
+    }
+
+    console.log(...user,...address);*/
+
+
+    function topla(...args){
+        let sonuc = 0;
+
+
+        for(let sayi of args){
+            sonuc +=sayi;
+        }
+
+
+        return sonuc;
+    }
+
+    topla(5,6,7);
+    topla(1,2);
+    console.log(topla(5,6,7));
+    console.log(topla(2,7));
+
+    function gosster(ad,soyad,...adres){
+        console.log(ad,soyad,adres);
+    }
+
+    gosster('ali','cebeci','kadıkoy','gfsag');
+
+
+
+
+</script>
+
+</body>
+</html>

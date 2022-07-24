@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+    const ogrenciler = new Map();
+
+
+    ogrenciler.set(1,'ali');
+    ogrenciler.set('34252','öykü');
+    ogrenciler.set(true,'alican');
+
+    console.log(ogrenciler.get(1));
+    console.log(ogrenciler.get('34252'));
+
+
+    let sonuc;
+
+   /* sonuc = ogrenciler.size; //boyut
+    sonuc = ogrenciler.has(1);//var mı? kontrolğ
+    ogrenciler.delete(1);
+    //ogrenciler.clear();*/
+
+    for(let x of ogrenciler.keys()){
+        console.log(x);
+    }
+    for(let x of ogrenciler.values()){
+        console.log(x);
+    }
+    for(let x of ogrenciler.entries()){
+        console.log(x);
+    }
+
+    for(let [key,value] of ogrenciler.entries()){
+        console.log(key , value);
+    }
+
+
+
+
+    console.log(sonuc);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+    const sayilar = [1,2,3,4,5,6,7];
+
+    //ES6
+    //const tekSayilar = sayilar.filter((sayi) => sayi%2 == 1);
+
+    //const tekSayilar = sayilar.map((sayi) => sayi%2 == 1);
+    //map hangi elemanlar koşula uyuyorsa true ya da false döndürür
+
+    //console.log(tekSayilar);
+
+
+    const urunler = [
+        {urunAdi: 'a', fiyat: 5000},
+        {urunAdi: 'a', fiyat: 600},
+        {urunAdi: 'a', fiyat: 8000},
+        {urunAdi: 'a', fiyat: 5000}
+    ]
+
+
+    //filtre koymak istiyorsak filter metodu
+    const filtrelenenUrunler = urunler.filter(urun => urun.fiyat > 5000).map(urun => urun.urunAdi);
+    //const sonuc1 = urunler.map(urun => urun.urunAdi);
+
+    //sonuc = filtrelenenUrunler.map(urun => urun.urunAdi);
+
+    const sonuc3 = filtrelenenUrunler.findIndex(urun => urun.fiyat>1000);
+    console.log(sonuc3);
+
+
+
+
+    console.log(sonuc);
+
+
+</script>
+</body>
+</html>
