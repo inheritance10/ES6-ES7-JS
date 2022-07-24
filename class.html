@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+
+    //function Constructor
+
+    /*function KisiES5(ad,soyad,yil){
+        this.ad = ad;
+        this.soyad = soyad;
+        this.yil = yil;
+
+    }
+
+    KisiES5.prototype.yasHesapla = function (){
+        let tarih = new Date().getFullYear();
+        return tarih - this.yil;
+    }
+
+
+    let insan1 = new KisiES5('ali','cebeci',2001);
+    let insan2 = new KisiES5('test','test',2000);
+
+    console.log(insan1.yasHesapla());
+
+    console.log(insan1);
+    console.log(insan2);*/
+
+
+    //class *********** ES6
+    class Kisi {
+        constructor(ad,soyad,yil) {
+
+            this.ad = ad;
+            this.soyad = soyad;
+            this.yil = yil;
+
+            console.log('nesne oluşturuldu');
+        }
+
+        yasHesapla(){
+            let tarih = new Date().getFullYear();
+            return tarih - this.yil;
+        }
+
+        get ad(){
+            //console.log('get metodu çalıştı');
+            return this._ad;
+        }
+
+        set ad(value){
+            if(value.length < 3){
+                console.log('çok az karakter')
+                return;
+            }
+            this._ad = value;
+            //console.log('set metodu çalıştı');
+        }
+
+        get yil(){
+            return this._yil;
+        }
+
+        set yil(value){
+            if(value < 1900 || value>new Date().getFullYear()){
+                console.log('geçersiz doğum yılı bilgisi');
+                return;
+            }
+
+            this._yil = value;
+        }
+    }
+
+
+    let kisi1 = new Kisi('testttt','test es6',2022);
+    //let kisi2 = new Kisi('tstttt','testtt',1999);
+
+
+   // console.log(kisi1.yasHesapla());
+
+    //console.log(kisi1);
+    console.log(kisi1.ad);
+
+
+
+
+</script>
+
+</body>
+</html>

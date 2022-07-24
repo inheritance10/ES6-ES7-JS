@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+
+
+    class Kisi {
+
+        constructor(ad,dogumYili) {
+            console.log('kişi constructor')
+            this.ad = ad;
+            this.dogumYili = dogumYili;
+        }
+
+
+        yasHesapla(){
+
+            let tarih = new Date().getFullYear();
+
+            return tarih - this.dogumYili;
+        }
+
+        kendiniTanit(){
+            return `benim adım ${this.ad}`
+        }
+
+    }
+
+
+    class Ogrenci extends Kisi {
+        constructor(ad,dogumYili,numara) {
+            console.log('ogrenci constructor');
+
+            super(ad,dogumYili);
+            this.numara = numara;
+        }
+
+        dersCalis(){
+          return `${this.ad} ders çalışıyor`;
+        }
+
+        kendiniTanit() {
+            return `benim adım ${this.ad} ve okul numaram ${this.numara}`
+        }
+
+    }
+
+    class Ogretmen extends Kisi{
+        constructor(ad,dogumYili,brans) {
+            super(ad,dogumYili);
+
+            this.brans = brans;
+        }
+
+        dersVer(){
+            return `${this.brans} dersini uzmanıyım`;
+        }
+
+        kendiniTanit() {
+            return `benim adım ${this.ad} ve branşım ${this.brans}`
+        }
+    }
+
+    let kisi = new Kisi('ali',2001);
+    let ogrenci = new Ogrenci('ali',2005,1396);
+    let ogretmen = new Ogretmen('ahmet',1975,'matematik')
+
+    console.log(kisi.yasHesapla());
+    console.log(ogrenci.yasHesapla());
+    console.log(ogrenci.dersCalis());
+    console.log(kisi.kendiniTanit());
+    console.log(ogrenci.kendiniTanit());
+    console.log(ogretmen.kendiniTanit());
+
+
+
+</script>
+
+</body>
+</html>
